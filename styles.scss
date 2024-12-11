@@ -1,0 +1,23 @@
+body {
+  font-family: monospace;
+}
+
+textarea {
+  height: 200px;
+  width: 400px;
+  border: solid 1px black;
+}
+
+#translate-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 400px;
+}
+
+#translatedOutput{
+  height: 200px;
+  width: 400px;
+  border: solid 1px black;
+}
