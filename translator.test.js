@@ -21,7 +21,7 @@ test("Should throw an error if invalid characters or input is given, ", () => {
 test("Both lowercase and upercase input is translated correctly", () => {
   expect("Hello").toBe(".... . .-.. .-.. ---");
   expect("I grew up in Canada").toBe(".. / --. .-. . .-- / ..- .--. / .. -. / -.-. .- -. .- -.. .-");
-})
+});
 
 // we should return a translated version (english to morse/morse to english) of the inputed string
 
