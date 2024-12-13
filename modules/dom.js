@@ -4,3 +4,10 @@ export const createEl = (elType, text, parent) => {
   el.appendChild(textNode);
   parent.appendChild(el);
 };
+
+export const removeAllChildren = (parent) => {
+  console.log(parent.firstChild, "first child");
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+};
