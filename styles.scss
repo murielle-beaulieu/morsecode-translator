@@ -1,6 +1,16 @@
-body {
+
+* {
   font-family: monospace;
 }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  font-size: 2rem;
+}
+
 
 textarea {
   height: 200px;
