@@ -1,33 +1,46 @@
 * {
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 header {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 15rem;
   font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: auto;
 }
 
 textarea {
   height: 200px;
   width: 400px;
   border: solid 1px black;
+  margin: 10px 10px 10px 0;
 }
 
 #translate-btn {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100px;
-  width: 400px;
+  justify-content: center;
+  height: 220px;
+  width: 100px;
+}
+
+.to-translate {
+  font-size: 3rem;
 }
 
 #translatedOutput {
   height: 200px;
   width: 400px;
   border: solid 1px black;
+  margin: 10px 10px 10px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

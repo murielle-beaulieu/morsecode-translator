@@ -13,15 +13,17 @@
     <h1> Morse Code Translator <i class="fa-solid fa-user-secret"></i></h1>
   </header>
   <div class="container">
-  <form action="#">
+  <form id="input-form">
     <label for="textToTranslate">Enter what you'd like to translate:</label><br>
     <textarea name="textToTranslate" onfocus="value=''"></textarea>
-    <div id="translate-btn">
-      <button type="submit">Translate</button>
-    </div>
   </form>
-    <label for="translatedOutput">Translation:</label>
-    <div id="translatedOutput"></div>
+  <div id="translate-btn">
+    <button type="submit" form="input-form"><i class="fa-sharp fa-solid fa-arrow-right"></i>Translate</button>
+  </div>
+    <form>
+      <label for="translatedOutput">Translation:</label>
+      <div id="translatedOutput"></div>
+    </form>
   </div>
 </body>
 </html>
