@@ -4,17 +4,12 @@ import { morseAlphabet } from "./morse-alphabet.js";
 
 const englishInputToUpcaseArr = (input) => {
   console.log("Received input:", input);
+    if (typeof input !== "string" || input.trim() === "") {
+      throw new Error("You cannot translate an empty string or invalid input");
+    }
   const cleanedInput = input.trim().split(/\s+/).join(" ");
   const arrInput = [...cleanedInput];
   console.log(arrInput);
-  // try {
-  //   if (typeof input !== "string" || input.trim() === "") {
-  //     throw new Error("You cannot translate an empty string or invalid input");
-  //   }
-  // } catch (error) {
-  //   console.warn(error.message);
-  //   return []; // Return an empty array for invalid input
-  // }
   const upCaseInput = arrInput.map((l) => {
     switch (l) {
       case "!":
