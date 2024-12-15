@@ -22,7 +22,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   removeAllChildren(display);
   const data = new FormData(form);
-  const dataToTranslate = data.get("textToTranslate").trim();
+  const dataToTranslate = data.get("textToTranslate");
   if (morseObj.includes(dataToTranslate[0].toUpperCase())) {
     // if english
     const translatedText = englishToMorse(dataToTranslate);

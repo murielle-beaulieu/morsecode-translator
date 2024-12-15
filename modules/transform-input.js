@@ -3,12 +3,36 @@ import { morseAlphabet } from "./morse-alphabet.js";
 /* * * ENGLISH TO MORSE * * */
 
 const englishInputToUpcaseArr = (input) => {
-  const arrInput = [...input];
+  console.log("Received input:", input);
+  const cleanedInput = input.trim().split(/\s+/).join(" ");
+  const arrInput = [...cleanedInput];
+  console.log(arrInput);
+  // try {
+  //   if (typeof input !== "string" || input.trim() === "") {
+  //     throw new Error("You cannot translate an empty string or invalid input");
+  //   }
+  // } catch (error) {
+  //   console.warn(error.message);
+  //   return []; // Return an empty array for invalid input
+  // }
   const upCaseInput = arrInput.map((l) => {
+    switch (l) {
+      case "!":
+        l = "!";
+        break;
+      case ",":
+        l = ",";
+        break;
+      case ".":
+         l = ".";
+        break;
+    }
     return (l === " ") ?  l = "/" : l.toUpperCase();
   });
   return upCaseInput
 };
+
+
 
 export const englishToMorse = (input) => {
   const data = englishInputToUpcaseArr(input);
@@ -28,6 +52,7 @@ export const englishToMorse = (input) => {
 
 const morseInputToArr = (input) => {
   const arrInput = input.split(" ");
+  console.log(arrInput);
   return arrInput;
 };
 
