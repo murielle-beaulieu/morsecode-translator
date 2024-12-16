@@ -23,7 +23,6 @@ form.addEventListener('submit', (event) => {
     throw new Error("Cannot translate an empty string or invalid input");
    }
   } catch (error) {
-    console.log(error);
     createEl("p", `${error}. Try again!`, translatedOutput);
     return error;
   }
