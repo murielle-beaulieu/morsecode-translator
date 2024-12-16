@@ -17,16 +17,9 @@ Make sure to handle spaces properly (ie. there is 1 space between English words,
 
 ---
 
-## Build Steps
-
-- n/a
-
----
-
 ## Design Goals / Approach
 
--   Design goals
--   why did you implement this the way you did?
+-   Went for a spy theme, darker colors for mystery and cracking codes!
 
 ---
 
@@ -34,19 +27,14 @@ Make sure to handle spaces properly (ie. there is 1 space between English words,
 
 -   Translate English text to Morse Code
 -   Translate Morse Code to English text
--   Can handle basic punctuation
----
-
-## Known issues
-
--   Remaining bugs, things that have been left unfixed
--   Features that are buggy / flimsy
+-   Can handle basic punctuation and numbers
 
 ---
 
 ## Future Goals
 
--   What are the immediate features you'd add given more time
+-   Having the options to write on both the input and output boxes
+-   Playing the sound of the morse code
 
 ---
 
@@ -56,11 +44,10 @@ Make sure to handle spaces properly (ie. there is 1 space between English words,
 
 ## What did you struggle with?
 
--   What? Why? How?
+-   I struggled mostly with throwing errors. Most tests weren't too hard when they're checking the output of the translation, but I had to put more time than expected in working out the try/catch blocks
 
 ---
 
 ## Further details, related projects, reimplementations
 
--   Is this project a reimplementation for something you've done in the past? if so explain it and link it here.
--   If it's an API, is there a client app that works with this project? link it
+- n/a
