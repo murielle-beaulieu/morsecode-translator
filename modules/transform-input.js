@@ -3,13 +3,20 @@ import { morseAlphabet } from "./morse-alphabet.js";
 /* * * ENGLISH TO MORSE * * */
 
 const englishInputToUpcaseArr = (input) => {
-  console.log("Received input:", input);
-    if (typeof input !== "string" || input.trim() === "") {
-      throw new Error("You cannot translate an empty string or invalid input");
+  if (input[0] === " " || input[0] === "") {
+    throw new Error("Cannot translate an empty string or invalid input");
+  }
+
+  if(
+    input.includes("#") ||
+    input.includes("@") ||
+    input.includes("#") ||
+    input.includes("$")) {
+      throw new Error("The string includes invalid characters");
     }
+
   const cleanedInput = input.trim().split(/\s+/).join(" ");
   const arrInput = [...cleanedInput];
-  console.log(arrInput);
   const upCaseInput = arrInput.map((l) => {
     switch (l) {
       case "!":
@@ -24,10 +31,8 @@ const englishInputToUpcaseArr = (input) => {
     }
     return (l === " ") ?  l = "/" : l.toUpperCase();
   });
-  return upCaseInput
+    return upCaseInput;
 };
-
-
 
 export const englishToMorse = (input) => {
   const data = englishInputToUpcaseArr(input);
@@ -46,6 +51,9 @@ export const englishToMorse = (input) => {
 /* * * MORSE TO ENGLISH * * */
 
 const morseInputToArr = (input) => {
+  if (input[0] === " " || input[0] === "") {
+    throw new Error("Cannot translate an empty string or invalid input");
+  }
   const arrInput = input.split(" ");
   console.log(arrInput);
   return arrInput;

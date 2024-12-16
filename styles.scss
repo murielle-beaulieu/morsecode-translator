@@ -1,25 +1,8 @@
 @use "./partials/mixins";
+@use "./partials/fonts";
 
-* {
-  font-family: "IBM Plex Mono", monospace;
-}
-
-header {
-  @include mixins.content-center;
-  height: 15rem;
-  font-size: 2rem;
-}
-
-.container {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-  margin: auto;
-}
-
-textarea {
-  @include mixins.input-output-box;
-
+body {
+  background: radial-gradient(#d14c2b, #000000);
 }
 
 #translate-btn {
@@ -28,10 +11,54 @@ textarea {
   width: 100px;
 }
 
-.to-translate {
-  font-size: 3rem;
-}
-
 #translatedOutput{
   @include mixins.input-output-box;
+  p {
+    margin:4px;
+  }
+}
+
+
+h1 {
+  font-family: "Racing Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  @include mixins.content-center;
+  height: 15rem;
+  font-size: 2rem;
+}
+
+textarea {
+  @include mixins.input-output-box;
+  background-color: transparent;
+}
+
+button {
+  font-family: "IBM Plex Mono", serif;
+  background-color: black;
+  color: white;
+  &:hover {
+    transition: 0.3s;
+    background-color: #d94c29;
+    color: black;
+  }
+}
+
+.fa-arrow-right {
+  font-size: 2.5rem;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  font-family: "IBM Plex Mono", serif;
+}
+
+.to-translate {
+  font-size: 3rem;
 }

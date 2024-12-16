@@ -26,24 +26,15 @@ describe("Tests for Morse Translator Project", () => {
     );
   });
 
-  // WORK IN PROGRESS
-  // test("Should translate characters, as well as numbers", () => {
-  //   expect(englishToMorse("123")).toBe(".---- ..--- ...--");
-  //   expect(morseToEnglish("....- / ..... / -....")).toBe("456")
-  // });
+  test("Should throw an error if string includes invalid characters", () => {
+   expect(() => englishToMorse("murielle@gmail")).toThrow("The string includes invalid characters");
+   expect(() => englishToMorse("#1 supporter of getting a sweet treat after dinner")).toThrow("The string includes invalid characters");
+  });
 
-  // WORK IN PROGRESS
-  // test("Should throw an error if string includes invalid characters", () => {
-  //  expect(() => englishToMorse("murielle@gmail.com")).toThrow("The string includes invalid characters");
-  //  expect(() => englishToMorse("#1 supporter of getting a sweet treat after dinner")).toThrow("The string includes invalid characters");
-  //  expect(() => morseToEnglish(".-#")).toThrow("The string includes invalid characters");
-  // });
-
-  // WORK IN PROGRESS
-  // test("Should throw an error if string input is empty", () => {
-  //  expect(() => englishToMorse(" ")).toThrow("Cannot translate an empty string or invalid input");
-  //  expect(() => morseToEnglish(" ")).toThrow("Cannot translate an empty string or invalid input");
-  // });
+  test("Should throw an error if string input is empty", () => {
+   expect(() => englishToMorse(" ")).toThrow("Cannot translate an empty string or invalid input");
+   expect(() => morseToEnglish(" ")).toThrow("Cannot translate an empty string or invalid input");
+  });
 
   test("Should handle basic punctuation such as ! , .", () => {
     expect(englishToMorse("To be the shadow of an arrow, who hits the target.")).toBe("- --- / -... . / - .... . / ... .... .- -.. --- .-- / --- ..-. / .- -. / .- .-. .-. --- .-- --..-- / .-- .... --- / .... .. - ... / - .... . / - .- .-. --. . - .-.-.-");
