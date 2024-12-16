@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <script src="./translator.js" type="module" defer></script>
   <title>Morsecode Translator</title>
 </head>
 <body>
   <header>
-    <h1> Morse Code Translator</h1>
+    <h1> morse code translator <i class="fa-solid fa-user-secret"></i></h1>
   </header>
-  <form action="#">
-    <label for="textToTranslate">Enter what you'd like to translate:</label><br>
-    <textarea name="textToTranslate" onfocus="value=''"></textarea>
+  <div class="container">
+    <form id="input-form">
+      <label for="textToTranslate">Enter what you'd like to translate:</label><br>
+      <textarea name="textToTranslate" onfocus="value=''"></textarea>
+    </form>
     <div id="translate-btn">
-      <button type="submit">Translate</button>
+      <button type="submit" form="input-form"><i class="fa-sharp fa-solid fa-arrow-right"></i>Translate</button>
     </div>
-  </form>
-    <label for="translatedOutput">Translation:</label>
-    <div id="translatedOutput"></div>
+    <div id="result">
+      <label for="translatedOutput">Translation:</label>
+      <div id="translatedOutput"></div>
+    </div>
+  </div>
 </body>
 </html>

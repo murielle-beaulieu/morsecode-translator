@@ -1,21 +1,25 @@
 # Morsecode Translator
 
-{add test badges here, all projects you build from here on out will have tests, therefore you should have github workflow badges at the top of your repositories: [Github Workflow Badges](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)}
-
 ---
 
 ## Requirements / Purpose
 
--   MVP
--   purpose of project
--   stack used and why
+-   MVP:
+Create a user interface that allows the user to either input some English text or some Morse Code
+Create JS functions that would allow the user to:
+Translate their English text into Morse Code
+Morse Code into English text
+Make sure to add tests for all your translate logic, you want to have some pure functions that take an input and return that input translated
+Make sure to handle spaces properly (ie. there is 1 space between English words, but one space between Morse Code characters)
+
+-   Purpose of project: Testing/TDD
+-   Stack used and why: HTML, CSS/SCSS, JavaScript, JEST/Babel Testing
 
 ---
 
 ## Build Steps
 
--   how to build / run project
--   use proper code snippets if there are any commands to run
+- n/a
 
 ---
 
@@ -28,9 +32,9 @@
 
 ## Features
 
--   What features does the project have?
--   list them...
-
+-   Translate English text to Morse Code
+-   Translate Morse Code to English text
+-   Can handle basic punctuation
 ---
 
 ## Known issues

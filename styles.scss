@@ -1,23 +1,64 @@
-body {
-  font-family: monospace;
-}
+@use "./partials/mixins";
+@use "./partials/fonts";
 
-textarea {
-  height: 200px;
-  width: 400px;
-  border: solid 1px black;
+body {
+  background: radial-gradient(#d14c2b, #000000);
 }
 
 #translate-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 400px;
+  @include mixins.content-center;
+  height: 220px;
+  width: 100px;
 }
 
 #translatedOutput{
-  height: 200px;
-  width: 400px;
-  border: solid 1px black;
+  @include mixins.input-output-box;
+  p {
+    margin:4px;
+  }
+}
+
+
+h1 {
+  font-family: "Racing Sans One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  @include mixins.content-center;
+  height: 15rem;
+  font-size: 2rem;
+}
+
+textarea {
+  @include mixins.input-output-box;
+  background-color: transparent;
+}
+
+button {
+  font-family: "IBM Plex Mono", serif;
+  background-color: black;
+  color: white;
+  &:hover {
+    transition: 0.3s;
+    background-color: #d94c29;
+    color: black;
+  }
+}
+
+.fa-arrow-right {
+  font-size: 2.5rem;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  font-family: "IBM Plex Mono", serif;
+}
+
+.to-translate {
+  font-size: 3rem;
 }

@@ -1,0 +1,13 @@
+@mixin content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+};
+
+@mixin input-output-box {
+  height: 200px;
+  width: 400px;
+  padding: 8px;
+  border: solid 2px black;
+  margin: 10px 10px 10px 0;
+}

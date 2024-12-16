@@ -1,37 +1,53 @@
-import { englishToMorse } from "./translator.js";
+const { englishToMorse } = require("./modules/transform-input.js");
+const { morseToEnglish } = require("./modules/transform-input.js");
 
-test("dummy test", () => {
-  expect(true).toBe(true);
+/// Tests for Morse Translator Project
+
+describe("Tests for Morse Translator Project", () => {
+  test("Should return a translated version (English to Morse/Morse to English) of a single character", () => {
+    expect(englishToMorse("E")).toBe(".");
+    expect(morseToEnglish("-")).toBe("T");
+  });
+
+  test("Should return a translated version (English to Morse/Morse to English) of a word", () => {
+    expect(englishToMorse("Chocolate")).toBe("-.-. .... --- -.-. --- .-.. .- - .");
+    expect(morseToEnglish("-... ..- -. -. -.--")).toBe("BUNNY");
+  });
+
+  test("Should return a translated version (English to Morse/Morse to English) of a sentence", () => {
+    expect(englishToMorse("I love coffee")).toBe(".. / .-.. --- ...- . / -.-. --- ..-. ..-. . .");
+    expect(morseToEnglish("- . ... - ... / .- .-. . / .... .- .-. -..")).toBe("TESTS ARE HARD");
+  });
+
+
+  test("Should translate a string correctly, regardless of lowercase or uppercase character", () => {
+    expect(englishToMorse("anExampleOfCamelCasing")).toBe(
+      ".- -. . -..- .- -- .--. .-.. . --- ..-. -.-. .- -- . .-.. -.-. .- ... .. -. --."
+    );
+  });
+
+  test("Should throw an error if string includes invalid characters", () => {
+   expect(() => englishToMorse("murielle@gmail")).toThrow("The string includes invalid characters");
+   expect(() => englishToMorse("#1 supporter of getting a sweet treat after dinner")).toThrow("The string includes invalid characters");
+  });
+
+  test("Should throw an error if string input is empty", () => {
+   expect(() => englishToMorse(" ")).toThrow("Cannot translate an empty string or invalid input");
+   expect(() => morseToEnglish(" ")).toThrow("Cannot translate an empty string or invalid input");
+  });
+
+  test("Should handle basic punctuation such as ! , .", () => {
+    expect(englishToMorse("To be the shadow of an arrow, who hits the target.")).toBe("- --- / -... . / - .... . / ... .... .- -.. --- .-- / --- ..-. / .- -. / .- .-. .-. --- .-- --..-- / .-- .... --- / .... .. - ... / - .... . / - .- .-. --. . - .-.-.-");
+    expect(morseToEnglish("- --- / -... . --..-- / --- .-. / -. --- - / - --- / -... . -.-.-- / - .... .- - / .. ... / - .... . / --.- ..- . ... - .. --- -. .-.-.-")
+    ).toBe("TO BE, OR NOT TO BE! THAT IS THE QUESTION.");
+  });
+
+  test("Should represent spaces by a / in a sentence", () => {
+    expect(englishToMorse("ho ho ho")).toBe(".... --- / .... --- / .... ---");
+  });
+
+  test("Should remove extra spaces in a sentence", () => {
+    expect(englishToMorse("ho    ho    ho")).toBe(".... --- / .... --- / .... ---");
+  });
+
 });
-
-// Tests for Morse Translator Project
-// if the data is invalid, using special characters or empty string
-
-test("Should throw an error if invalid characters or input is given, ", () => {
-  expect(() => {
-    englishToMorse("");
-  }).toThrow("You must a string before attempting to translate");
-  expect(() => {
-    englishToMorse("$ # @ ^ !!chaos!! * ( ) % &");
-  }).toThrow("You must a string before attempting to translate");
-})
-
-// if the string passed is lowercase, we transform to uppercase before translating
-
-test("Both lowercase and upercase input is translated correctly", () => {
-  expect("Hello").toBe(".... . .-.. .-.. ---");
-  expect("I grew up in Canada").toBe(".. / --. .-. . .-- / ..- .--. / .. -. / -.-. .- -. .- -.. .-");
-});
-
-// we should return a translated version (english to morse/morse to english) of the inputed string
-
-test("Both morse and english can be translated to the other", () => {
-  expect("hello").toBe(".... . .-.. .-.. ---");
-  expect("I love snowboarding").toBe(".. / .-.. --- ...- . / ... -. --- .-- -... --- .- .-. -.. .. -. --.");
-})
-
-// spaces should be represented by a / in a sentence
-
-test("Spaces are represented by one /,no matter how many consecutive spaces are in the sentence", () => {
-  expect("Hey   you").toBe(".... . -.-- / -.-- --- ..-");
-})
