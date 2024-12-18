@@ -8,10 +8,6 @@ const form = document.querySelector("form");
 const translatedOutput = document.querySelector("#translatedOutput");
 const display = document.querySelector("#translatedOutput");
 
-/* AUTO DETECT LANGUAGE */
-// if the first index of input is part of the morse obj keys? if it's a letter we go for english, if not we know know it's morse
-const morseObj = Object.keys(morseAlphabet);
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   removeAllChildren(display);
@@ -41,6 +37,7 @@ form.addEventListener('submit', (event) => {
       return error;
     }
 
+    /* AUTO DETECT LANGUAGE */
     const isMorseCode = /^[.\- ]+$/.test(dataToTranslate);
     if (isMorseCode) {
     // if morse
