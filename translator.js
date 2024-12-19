@@ -38,7 +38,8 @@ form.addEventListener('submit', (event) => {
     }
 
     /* AUTO DETECT LANGUAGE */
-    const isMorseCode = /^[.\- ]+$/.test(dataToTranslate);
+    const isMorseCode = /^[.\-/\ ]+$/.test(dataToTranslate);
+
     if (isMorseCode) {
     // if morse
     const translatedText = morseToEnglish(dataToTranslate);

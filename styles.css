@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600&family=Racing+Sans+One&display=swap");
 body {
-  background: radial-gradient(#d14c2b, #000000);
+  background-image: url(./assets/abstract-spy.avif);
+  background-size: cover;
 }
 
 #translate-btn {
@@ -15,17 +16,22 @@ body {
   height: 200px;
   width: 400px;
   padding: 8px;
-  border: solid 2px black;
+  border: solid 4px rgb(255, 255, 255);
   margin: 10px 10px 10px 0;
+  color: white;
 }
+
 #translatedOutput p {
   margin: 4px;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 h1 {
   font-family: "Racing Sans One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: white;
 }
 
 header {
@@ -34,30 +40,38 @@ header {
   justify-content: center;
   height: 15rem;
   font-size: 2rem;
+  color: white;
 }
 
 textarea {
   height: 200px;
   width: 400px;
   padding: 8px;
-  border: solid 2px black;
+  border: solid 4px rgb(255, 255, 255);
   margin: 10px 10px 10px 0;
   background-color: transparent;
+  font-size: 1rem;
+  color: white;
 }
 
 button {
   font-family: "IBM Plex Mono", serif;
-  background-color: black;
+  background-color: rgb(27, 41, 201);
   color: white;
+  font-size: 1.15rem;
+  border-radius: 0.5rem;
+  padding: 8px 9px;
+  border: none;
 }
+
 button:hover {
   transition: 0.3s;
-  background-color: #d94c29;
-  color: black;
+  background-color: #ffffff;
+  color: rgb(16, 6, 113);
 }
 
 .fa-arrow-right {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .container {
@@ -68,8 +82,10 @@ button:hover {
   font-family: "IBM Plex Mono", serif;
 }
 
-.to-translate {
-  font-size: 3rem;
+label {
+  color: white;
 }
+
+
 
 /*# sourceMappingURL=styles.css.map */

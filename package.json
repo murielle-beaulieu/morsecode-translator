@@ -11,5 +11,8 @@
   },
   "jest": {
     "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "sass": "^1.83.0"
   }
 }
