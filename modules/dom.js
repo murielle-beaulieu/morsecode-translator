@@ -6,7 +6,6 @@ export const createEl = (elType, text, parent) => {
 };
 
 export const removeAllChildren = (parent) => {
-  console.log(parent.firstChild, "first child");
   while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
   }
